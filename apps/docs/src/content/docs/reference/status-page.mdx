@@ -1,0 +1,48 @@
+---
+title: Status Page
+---
+
+A status page is a web page that displays the current status of a service or system.
+
+## Configuration
+
+### Slug
+
+You slug is a unique identifier for your status page. It is used in the URL of your status page. e.g `status` => `https://status.openstatus.dev`
+
+### Custom Domain
+
+You can configure a custom domain for your status page. e.g `status.example.com` => `https://status.example.com`
+
+### Password (basic auth)
+
+You can add a password for your status page to protect a status page. If you are not authenticated, you will get redirected to the `/login`.
+
+The password is stored in plain text in a `cookie`, so keep the password easy and fun. You can share any page by appending the password via the `pw` search param like: `https://[slug].openstatus.dev/?pw=my-secret-password` and we will automatically authenticate the user. This can be useful to authenticate to private RSS feeds.
+
+### Magic Link (session auth)
+
+You can secure your status page by restricting access to users with approved email domains. Users will receive a magic link sent to their email and, upon clicking it, will be authenticated via a session token.
+
+This feature is available as an add-on for paid plans and is not included by default.
+
+### Favicon
+
+You can add a favicon for your status page.
+
+
+### JSON Feed 
+
+You can access your status page data in JSON format by appending `/feed/json` to your status page URL. 
+
+Example: `https://status.openstatus.dev/feed/json`
+
+### SSH Command
+
+Check the current status page anytime from your Terminal with:
+
+```
+ssh [slug]@ssh.openstatus.dev
+```
+
+Example: `ssh status@ssh.openstatus.dev`
